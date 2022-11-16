@@ -1,0 +1,98 @@
+a { text-decoration: none;
+    text-shadow: 4px 4px 4px lightgrey ;
+    color: darkgreen;
+    font-family: sans-serif;
+} 
+a.cl-lime {color: lime;}
+.hdr {
+        background-color: lightgray;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 10px;
+        width: 100%;
+        height: 80px;
+        text-align:center;
+}
+.nv {   
+        background-color: lightslategray;
+        padding-top: 10px;
+        margin-bottom: 0;
+        width: 100%;
+        height: 40px;
+        text-align:center;
+}    
+.tbl {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-left: 15%;
+        margin-right: 15%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center ;
+        text-align: center;
+        row-gap: 50px; 
+        column-gap: 50px; 
+}
+.divmain {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        width: 300px;
+        height: 300px;
+        background: #9DE1C0;
+}
+.divpic {
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-right: 20px;
+        width: 260px;
+        height: 200px;
+        background-size: 260px 200px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 25px 25px 0px 0px;
+}
+.divpic_1{
+        background-image: url(images/5279_.jpg);
+}
+.divpic_2{
+        background-image: url(images/10215_.jpg);
+}
+.divpic_3{
+        background-image: url(images/27430_.jpg);
+}
+.divpic_4{
+        background-image: url(images/53162_.jpg);
+}
+.divttl {
+        margin-left: 20px;
+        margin-top: 5px;
+        padding-top: 3px;
+        width: 260px;
+        height: 60px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        background: #EFBFBF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+        border-radius: 0px 0px 25px 25px;
+}
+.divbtn{         display: flex;
+        justify-content: center;
+}
+.btn {
+        display: block;
+        justify-content: center;
+        text-align:center;
+        text-decoration: none;
+        text-shadow: none;
+        font-family: sans-serif;
+        border-radius: 3px 3px 6px 6px;
+        border-color: lime;
+        border-style: groove;
+        width: 160px;
+        height: 15px;
+        background: maroon;
+        font-size: 12px;
+        color: aliceblue;
+}
+hr {margin-bottom: 0px;
+} 
