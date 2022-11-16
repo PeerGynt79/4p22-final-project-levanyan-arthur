@@ -19,7 +19,7 @@ export default function MyComponentCard1() {
 export function MyComponentCard2() {
     return (
         <div className="divmain">
-            <div className="divpic  divpic_1"> </div>  
+            <div className="divpic  divpic_2"> </div>  
             <div className="divttl">
                 <div>Xeon X5675(6 ядер) RAM 16Gb</div> 
                 <div>Цена комплекта ~5300 р.</div>
@@ -35,7 +35,7 @@ export function MyComponentCard2() {
 export function MyComponentCard3() {
     return (
         <div className="divmain">
-           <div className="divpic  divpic_1"> </div>  
+           <div className="divpic  divpic_3"> </div>  
             <div className="divttl">
                 <div>Xeon X5675(6 ядер) RAM 16Gb</div> 
                 <div>Цена комплекта ~5300 р.</div>
@@ -51,7 +51,7 @@ export function MyComponentCard3() {
 export function MyComponentCard4() {
     return (
         <div className="divmain">
-            <div className="divpic  divpic_1"> </div>  
+            <div className="divpic  divpic_4"> </div>  
             <div className="divttl">
                 <div>Xeon X5675(6 ядер) RAM 16Gb</div> 
                 <div>Цена комплекта ~5300 р.</div>
