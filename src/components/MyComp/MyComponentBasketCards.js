@@ -31,12 +31,12 @@ export default function MyComponentBasketCards () {
             })
         }
         <div style={{width:'100%',paddingLeft:'5%',paddingRight:'5%', display:'flex',flexDirection:'row', alignSelf:'stretch'}}>
-        <h4 style={{width:'15%', fontSize:'3vh',textAlign:'center'}}>Итого:</h4>
-        <h4 style={{width:'5%', fontSize:'3vh',textAlign:'center'}}>180</h4>
-        <h4 style={{width:'15%', fontSize:'3vh',textAlign:'center'}}>товаров</h4>
-        <h4 style={{width:'15%', fontSize:'3vh',textAlign:'center'}}>на сумму</h4>
-        <h4 style={{width:'25%', fontSize:'3vh',textAlign:'center'}}>ХХХХХХ.ХХ р.</h4>
-                <button  className="btn"style={{width:'30%'}}> Выполнить покупку </button>
+        <h4 style={{width:'15%', fontSize:'4vh',textAlign:'center'}}>Итого:</h4>
+        <h4 style={{width:'5%', fontSize:'4vh',textAlign:'center'}}>180</h4>
+        <h4 style={{width:'15%', fontSize:'4vh',textAlign:'center'}}>товаров</h4>
+        <h4 style={{width:'15%', fontSize:'4vh',textAlign:'center'}}>на сумму</h4>
+        <h4 style={{width:'25%', fontSize:'4vh',textAlign:'center'}}>ХХХХХХ.ХХ р.</h4>
+                <button  className="btn"style={{width:'30%',fontSize:'3vh',}}> Выполнить покупку </button>
         </div>
 
         </div>
