@@ -13,18 +13,22 @@ import './MyComponentMain.css';
         "count":120
     }
 */
-export default function MyComponentCard (props) {
+export default function MyComponentBasketCard (props) {
     return (
         <div className="Card-main">
             {//<div className="Card-title">
             }    
                 <img className="Card-pic" alt = {props.title} src={props.image}/>  
                 <div className="divcenter">
-                 <span className='Card-title__title'>{props.title}</span>
-                 <button className="btn"> Купить </button>   
+                <span className='Card-title__title'>{props.title}</span>
+                <div style={{width:'20vw',paddingLeft:'5vw',paddingRight:'5vw', display:'flex',flexDirection:'row'}}>
+                <button className="btn Card-title__price_left"> - </button>
+                <button  className="btn"> 99 </button>
+                <button  className="btn Card-title__price_right"> + </button>
+                <button  className="btn"> Удалить </button>
                 </div>
-                <span className='Card-title__price Card-title__price_left'>{props.price}р.</span>
-                <span className='Card-title__price Card-title__price_right'>Цена</span>
+                </div>
+    
             {//</div>
             } 
         </div> 

@@ -1,4 +1,4 @@
-import './MyComponentStyles.css';
+import './MyComponentMain.css';
 
 function MyComponentFooter() {
     return (

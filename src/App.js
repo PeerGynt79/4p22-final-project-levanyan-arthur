@@ -1,9 +1,9 @@
 import './App.css';
-import MyComponentIndex from './components/MyComp/MyComponentIndex';
+import MyComponentMain from './components/MyComp/MyComponentMain';
 function App() {
   return (
     <div className='App'>
-    <MyComponentIndex/>
+    <MyComponentMain/>
     </div>
   );
 }

@@ -1,0 +1,105 @@
+a { text-decoration: none;
+    text-shadow: 4px 4px 4px lightgrey ;
+
+} 
+
+.hdr {
+        background-color: lightgray;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 10px;
+        width: 100%;
+        height: 80px;
+        text-align:center;
+}
+.nv {   
+        background-color: lightslategray;
+        padding-top: 10px;
+        margin-bottom: 0;
+        width: 100%;
+        height: 40px;
+        text-align:center;
+}    
+.tbl {
+        margin-top: 5vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-bottom: 5vh;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5vh; 
+}
+.Card-main {
+        padding: 1vh;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        background: #c8ffe4;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+}
+.Card-pic {
+        width: 18.5%;
+        background-size: 50% 50%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5%;
+}
+.Card-title__title {
+        padding: 2%;
+        align-self: center;
+        justify-self: center;
+        font-size: 3vw;
+        line-height: 3vw;
+}
+.Card-title__price {
+        padding: 4px;
+        background: rgba(253, 174, 186, 0.774);
+        writing-mode: vertical-rl;
+        display: block;
+        text-orientation: sideways;
+        width: 5%;
+        font-size: 3vw;
+        line-height: 3vw;
+}
+.Card-title__price_left {
+        border-radius: 10px 0px 0px 10px;
+}
+.Card-title__price_left .Card-title__price_right::after {
+        content: '$';
+}
+.Card-title__price_right {
+        border-radius: 0px 10px 10px 0px;
+}
+
+.divcenter{
+        width: 71.5%;
+        display: flex;
+        justify-content: space-between;
+        /*align-items: stretch;*/
+        flex-direction: column;
+}
+.btnmiddle {}
+
+.btn {
+        padding: 1%;
+        align-self: center;
+        justify-self: center;
+        border-radius: 0.75vw;
+        border: 0.2vw solid;
+        border-color: #787878;
+        width: 20vw;
+        background-color: lightslategray;
+        font-size: 2vw;
+        color: aliceblue;
+}
+.btn:hover {
+        border-color: lime;
+        background-color: maroon;
+}
+.btnmiddle:hover {
+        border-color: #787878;
+        background-color: lightslategray;
+}
+hr {margin-bottom: 0px;
+} 

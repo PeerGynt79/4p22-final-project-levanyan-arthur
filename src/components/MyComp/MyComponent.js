@@ -21,10 +21,10 @@ export default function MyComponentCard (props) {
                 <img className="Card-pic" alt = {props.title} src={props.image}/>  
                 <div className="divcenter">
                  <span className='Card-title__title'>{props.title}</span>
-                 <button className="btn"> Купить </button>   
+                 <button className="btn"> Buy for {props.price}$</button>   
                 </div>
-                <span className='Card-title__price Card-title__price_left'>{props.price}р.</span>
-                <span className='Card-title__price Card-title__price_right'>Цена</span>
+                <span className='Card-title__price Card-title__price_left'>{props.price}</span>
+                <span className='Card-title__price Card-title__price_right'>Price</span>
             {//</div>
             } 
         </div> 
