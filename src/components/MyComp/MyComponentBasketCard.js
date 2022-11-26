@@ -28,6 +28,8 @@ export default function MyComponentBasketCard (props) {
                 <button  className="btn"> Удалить </button>
                 </div>
                 </div>
+                <span className='Card-title__price Card-title__price_left'>{props.price}р.</span>
+                <span className='Card-title__price Card-title__price_right'>Цена</span>
     
             {//</div>
             } 
