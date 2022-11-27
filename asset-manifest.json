@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/4p22-final-project-levanyan-arthur/static/css/main.c6c5d690.css",
-    "main.js": "/4p22-final-project-levanyan-arthur/static/js/main.90d2c9df.js",
+    "main.js": "/4p22-final-project-levanyan-arthur/static/js/main.b81e43d3.js",
     "index.html": "/4p22-final-project-levanyan-arthur/index.html",
     "main.c6c5d690.css.map": "/4p22-final-project-levanyan-arthur/static/css/main.c6c5d690.css.map",
-    "main.90d2c9df.js.map": "/4p22-final-project-levanyan-arthur/static/js/main.90d2c9df.js.map"
+    "main.b81e43d3.js.map": "/4p22-final-project-levanyan-arthur/static/js/main.b81e43d3.js.map"
   },
   "entrypoints": [
     "static/css/main.c6c5d690.css",
-    "static/js/main.90d2c9df.js"
+    "static/js/main.b81e43d3.js"
   ]
 }
