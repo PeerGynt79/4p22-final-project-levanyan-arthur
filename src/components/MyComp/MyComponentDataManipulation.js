@@ -1,4 +1,5 @@
 import './MyComponentHeader.css';
+import MyComponentSelector from './MyComponentSelector';
 
 
 function MyComponentDataManipulation() {
@@ -10,7 +11,8 @@ function MyComponentDataManipulation() {
         </div>
         <div className="header__side">
             <span className="header-side__item" style={{justifySelf: 'left', marginRight:'1vw'}} >Категория</span>
-            <input className="header-side__item" style={{alignSelf:'center', width:'35vw'}}></input>
+        <MyComponentSelector/>
+
         </div>
         <button className="header-side__item" style={{alignSelf:'center', width:'7%'}}> F </button>
     </div>

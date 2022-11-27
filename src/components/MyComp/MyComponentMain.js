@@ -7,7 +7,7 @@ import MyComponentEntry from './MyComponentEntry';
 import MyComponentFeedback from './MyComponentFeedback';
 import MyComponentBuyActivated from './MyComponentBuyActivated';
 import MyComponentFeedbackActivated from './MyComponentFeedbackActivated';
-//import MyComponentCategories from './MyComponentCategories';
+import MyComponentCategories from './MyComponentCategories';
 import MyComponentDataManipulation from './MyComponentDataManipulation';
 import './MyComponentMain.css';
 import './MyComponentHeader.css';
@@ -31,12 +31,10 @@ return (
         <MyComponentDataManipulation/>
         <hr/>    
         <main className='Main-info' style={{display:'flex', flexDirection:'row'}}>
-        {
-        /*
-        <MyComponentCategories/>
-        <hr/> 
-        */
-        }   
+    {           
+    //    <MyComponentCategories/>
+    //    <hr/> 
+}              
         <MyComponentCards/>
         </main>
         <hr/>    
