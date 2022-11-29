@@ -1,5 +1,7 @@
 import './MyComponentMain2.css';
 import './MyComponentMain.css';
+import { Link } from 'react-router-dom';
+
 export default function MyComponentFeedback (){
     return (
     <main className="main"  >
@@ -27,8 +29,10 @@ export default function MyComponentFeedback (){
                 <input id="checkbox" name="subscribe" type="checkbox" value="true"/>
                 <label className="main-form__label_checkbox" htmlFor="checkbox">Я согласен получать обновления на почту</label>
             </div>
-            <button className="main-form__button main-form__button_registration btn" id="registration_button" type="submit">Отправить</button>
-            
+            {
+            //<button className="main-form__button main-form__button_registration btn" id="registration_button" type="submit">Отправить</button>
+            <Link className="main-form__button main-form__button_registration btn" to="/feedbackdone">Отправить</Link>      
+            }
         </form>
     </main>
     )

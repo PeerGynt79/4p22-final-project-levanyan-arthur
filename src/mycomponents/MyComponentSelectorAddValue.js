@@ -14,8 +14,7 @@ import './MyComponentMain.css';
     }
 */
 export default function MyComponentSelector (props) {
-    console.log(props.val);
     return (
-        <option value={props.val}>{props.val}</option>
+        <option  style={{ fontSize:'2.5vw'}} value={props.val}>{props.val}</option>
     )
 };

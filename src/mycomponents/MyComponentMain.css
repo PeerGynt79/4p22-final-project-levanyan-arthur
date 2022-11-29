@@ -7,9 +7,9 @@ a { text-decoration: none;
         background-color: lightgray;
         margin-top: 0;
         margin-bottom: 0;
-        padding-top: 10px;
+        padding-top: 1.5vw;
         width: 100%;
-        height: 80px;
+        height: 5vw;
         text-align:center;
 }
 .nv {   
@@ -21,13 +21,13 @@ a { text-decoration: none;
         text-align:center;
 }    
 .tbl {
-        margin-top: 5vh;
-        margin-left: 5vw;
-        margin-right: 5vw;
-        margin-bottom: 5vh;
+        margin-top: 1vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        margin-bottom: 1vw;
         display: flex;
         flex-direction: column;
-        row-gap: 5vh; 
+        row-gap: 2vw; 
 }
 .Card-main {
         padding: 1vh;
@@ -79,8 +79,6 @@ a { text-decoration: none;
         /*align-items: stretch;*/
         flex-direction: column;
 }
-.btnmiddle {}
-
 .btn {
         padding: 1%;
         align-self: center;
@@ -93,6 +91,7 @@ a { text-decoration: none;
         font-size: 2vw;
         color: aliceblue;
 }
+
 .btn:hover {
         border-color: lime;
         background-color: maroon;

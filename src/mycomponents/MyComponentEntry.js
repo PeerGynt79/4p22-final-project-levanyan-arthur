@@ -1,6 +1,7 @@
 
 import './MyComponentMain2.css';
 import './MyComponentMain.css';
+import { Link } from 'react-router-dom';
 
 export default function MyComponentEntry (){
     return (
@@ -11,7 +12,10 @@ export default function MyComponentEntry (){
             <input className="main-form__input" id="email" name="email" type="email" placeholder="Введите email"/>
             <label className="main-form__label main-form__label_entrance" htmlFor="password">Пароль</label>
             <input className="main-form__input" id="password" name="password" type="password" placeholder="Введите пароль"/>
-            <button className="main-form__button main-form__button_entrance btn" type="submit">Войти</button>
+            {
+            //<button className="main-form__button main-form__button_entrance btn" type="submit" >Войти</button>
+            <Link className="main-form__button main-form__button_registration btn" to="/">Отправить</Link>      
+            }
         </form>
     </main>
     )

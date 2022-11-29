@@ -1,5 +1,5 @@
 import './App.css';
-import MyComponentMain from './components/MyComp/MyComponentMain';
+import MyComponentMain from './mycomponents/MyComponentMain';
 function App() {
   return (
     <div className='App'>
