@@ -29,10 +29,7 @@ export default function MyComponentFeedback (){
                 <input id="checkbox" name="subscribe" type="checkbox" value="true"/>
                 <label className="main-form__label_checkbox" htmlFor="checkbox">Я согласен получать обновления на почту</label>
             </div>
-            {
-            //<button className="main-form__button main-form__button_registration btn" id="registration_button" type="submit">Отправить</button>
             <Link className="main-form__button main-form__button_registration btn" to="/feedbackdone">Отправить</Link>      
-            }
         </form>
     </main>
     )

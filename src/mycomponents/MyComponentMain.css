@@ -80,6 +80,7 @@ a { text-decoration: none;
         flex-direction: column;
 }
 .btn {
+        z-index: 15;
         padding: 1%;
         align-self: center;
         justify-self: center;

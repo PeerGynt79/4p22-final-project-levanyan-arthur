@@ -1,5 +1,5 @@
 import './MyComponentMain.css';
-import MyComponentSelectorAddValue from './MyComponentSelectorAddValue'
+import MyComponentSelectorAddValue from '../mycomponents/MyComponentSelectorAddValue'
 import { useEffect, useState} from 'react';
 
 import axios from 'axios';

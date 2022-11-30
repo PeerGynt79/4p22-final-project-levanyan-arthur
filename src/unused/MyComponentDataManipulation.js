@@ -1,5 +1,4 @@
 import './MyComponentHeader.css';
-import MyComponentSelector from './MyComponentSelector';
 import { Link } from 'react-router-dom';
 //import { useSelector} from 'react-redux';
 

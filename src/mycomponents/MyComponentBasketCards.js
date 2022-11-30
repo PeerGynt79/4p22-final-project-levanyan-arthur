@@ -1,31 +1,25 @@
-import MyComponentBasketCard from './MyComponentBasketCard';
 import './MyComponentMain.css';
-
-import { useEffect, useState} from 'react';
+import MyComponentBasketCard from './MyComponentBasketCard';
 import axios from 'axios';
+import { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
 
 export default function MyComponentBasketCards () {
+    const [goods,setGoods] = useState([]);
     const basket=useSelector((state)=>state.xbasket); 
     const prices=JSON.parse(localStorage.getItem("prices"))
     const countBasket = basket.reduce((accum, item) => accum + item, 0)
     const countPrice = Math.round(basket.reduce((accum, item,idx) => accum + item*prices[idx], 0)*100)/100
-//        let  prices;
 
-    const [goods,setGoods] = useState([]);
-    
     useEffect( () => {
-
         axios.get('https://fakestoreapi.com/products')
             .then((result)=>{
-//                prices=result.data.map(item=>item.price)
-//                console.log('prices',prices)
                 setGoods(result.data.filter((item)=>!!basket[item.id-1]))
             })
-    },[goods])
+    },[basket])//вот здесь формируя список для корзины хуком мы сообщаем что его нужно задействовать каждый раз при изменении корзины basket
 
     if (countBasket) {
         return (

@@ -5,7 +5,7 @@ export default function MyComponentFeedbackActivated (){
     <main className="main"  >
     <main className="main"  >
         <h1 style={{fontSize:'2.5vw'}}>Поздравляю Вас!</h1>
-        <h3 style={{fontSize:'1.5vw'}}>Вы успешно прошли авторизацию, и получили доступ к данной странице.</h3>
+        <h3 style={{fontSize:'1.5vw'}}>Вы успешно прошли авторизацию, и получили доступ к секретной странице.</h3>
     </main>
     </main>
     )
