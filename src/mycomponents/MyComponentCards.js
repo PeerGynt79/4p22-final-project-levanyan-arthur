@@ -33,7 +33,7 @@ return (
       <div className="header__side"  style={{ fontSize:'2.5vw'}}>
         <span className="header-side__item" style={{justifySelf: 'left',  fontSize:'2.5vw', marginLeft:'2vw', marginRight:'3vw'}} >Категория</span>
         <select name='category-selector' value={categoryValue} onChange={(e)=>setCategoryValue(e.target.value)} style={{ outline :'none', fontSize:'2.5vw',alignSelf:'center', width:'25vw'}}>
-          {categories.map((item)=> <option  style={{ fontSize:'2.5vw'}} >{item}</option>)}
+          {categories.map((item,idx)=> <option  key={idx} style={{ fontSize:'2.5vw'}} >{item}</option>)}
         </select>        
       </div>
       <Link to='basketcards' className="header-side__item" id='basket-link' style={{marginLeft:'2vw', marginRight:'3vw', padding:'0',fontSize:'1.5vw',border:'none', backgroundColor:'#ffffff',outlineColor:'#ffffff',backgroundSize:'100% 100%',alignSelf:'center', height:'5vw', width:'5vw', backgroundImage:"url('/4p22-final-project-levanyan-arthur/basketempty.png')"}}/>

@@ -55,6 +55,9 @@ background: #FFFFFF;}
 #email-attention{
     visibility: hidden;
 }
+#textarea-attention{
+  visibility: hidden;
+}
 #password-attention{
   visibility: hidden;
 }

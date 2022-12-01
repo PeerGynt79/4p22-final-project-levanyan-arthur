@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 
 
 export default function MyComponentBasketCards () {
+
     const [goods,setGoods] = useState([]);
     const basket=useSelector((state)=>state.xbasket); 
     const prices=JSON.parse(localStorage.getItem("prices"))
@@ -15,6 +16,7 @@ export default function MyComponentBasketCards () {
     const countPrice = Math.round(basket.reduce((accum, item,idx) => accum + item*prices[idx], 0)*100)/100
 
     useEffect( () => {
+        
         axios.get('https://fakestoreapi.com/products')
             .then((result)=>{
                 setGoods(result.data.filter((item)=>!!basket[item.id-1]))
@@ -27,7 +29,8 @@ export default function MyComponentBasketCards () {
         <div className="tbl">
         <h1 style={{margin:'2vw 0vw 2vw 0vw',fontSize:'2.5vw'}}> Корзина</h1>
         {goods.map((item)=>
-            {
+            {    
+
             return <MyComponentBasketCard key={Number(item.id)}
                                 id={item.id}
                                 image={item.image} 
@@ -50,6 +53,8 @@ export default function MyComponentBasketCards () {
         </div>
 
         )} else {
+            
+
         return (
             <main className="main"  >
                 <h1 style={{fontSize:'2.5vw'}}>Корзина пуста.</h1>

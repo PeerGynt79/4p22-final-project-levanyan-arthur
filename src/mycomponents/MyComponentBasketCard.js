@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import {addToXBasket, removeFromXBasket,add10ToXBasket, remove10FromXBasket,deleteFromXBasket} from "../store/xbasket/xbasketSlice"
 
 export default function MyComponentBasketCard (props) {
+    
+    
     const dispatch=useDispatch();
     const basket=useSelector((state)=>state.xbasket); 
     const onePlus = (event)=>{
