@@ -3,13 +3,15 @@ import MyComponentBasketCard from './MyComponentBasketCard';
 import axios from 'axios';
 import { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteFromXBasket } from '../store/xbasket/xbasketSlice';
 
 
 
 export default function MyComponentBasketCards () {
 
     const [goods,setGoods] = useState([]);
+    const dispatch=useDispatch();
     const basket=useSelector((state)=>state.xbasket); 
     const prices=JSON.parse(localStorage.getItem("prices"))
     const countBasket = basket.reduce((accum, item) => accum + item, 0)
@@ -21,8 +23,17 @@ export default function MyComponentBasketCards () {
             .then((result)=>{
                 setGoods(result.data.filter((item)=>!!basket[item.id-1]))
             })
-    },[basket])//вот здесь формируя список для корзины хуком мы сообщаем что его нужно задействовать каждый раз при изменении корзины basket
+    },[basket])    
+    
+    const buyClick = () =>{
+        goods.forEach(element => {
+            console.log(`Наименование: ${element.title}; количество: ${basket[element.id-1]}; сумма:${Math.round(basket[element.id-1]*element.price*100)/100}`);
+        });
 
+        for (const idx in basket) {
+            dispatch(deleteFromXBasket(idx))    
+        };
+    }
     if (countBasket) {
         return (
 
@@ -47,7 +58,7 @@ export default function MyComponentBasketCards () {
         {
 
         }
-        <Link  className="btn"style={{width:'30%',fontSize:'2vw',}}  to='/buydone'> Выполнить покупку </Link>
+        <Link  className="btn"style={{width:'30%',fontSize:'2vw',}}  onClick={buyClick} to='/buydone'> Выполнить покупку </Link>
         </div>
 
         </div>

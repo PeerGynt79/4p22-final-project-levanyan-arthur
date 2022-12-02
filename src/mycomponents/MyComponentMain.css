@@ -79,6 +79,35 @@ a { text-decoration: none;
         /*align-items: stretch;*/
         flex-direction: column;
 }
+.basket-icon_full{
+        margin-left:2vw;
+        margin-right:3vw;
+        padding:0;
+        font-size:1.5vw;
+        border:none;
+        background-image: url(../images/basketfull.png);
+        background-color:#ffffff;
+        outline-color:#ffffff;
+        background-size:100% 100%;
+        align-self:center;
+        height:5vw;
+        width:5vw; 
+}
+.basket-icon_empty{
+        position: relative;
+        margin-left:2vw;
+        margin-right:3vw;
+        padding:0;
+        font-size:1.5vw;
+        border:none;
+        background-image: url(../images/basketempty.png);
+        background-color:#ffffff;
+        outline-color:#ffffff;
+        background-size:100% 100%;
+        align-self:center;
+        height:5vw;
+        width:5vw; 
+}
 .btn {
         z-index: 15;
         padding: 1%;
@@ -92,7 +121,11 @@ a { text-decoration: none;
         font-size: 2vw;
         color: aliceblue;
 }
-
+.btn_large-card{
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        width:25vw
+}
 .btn:hover {
         border-color: lime;
         background-color: maroon;

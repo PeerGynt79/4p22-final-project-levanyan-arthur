@@ -3,12 +3,20 @@ import MyComponentCard from './MyComponentCard';
 import axios from 'axios';
 import { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux'
+
 
 export default function MyComponentCards () {
+const [basketActive,setBasketActive] = useState(false)
 const [searchValue,setSearchValue] = useState('');
 const [categoryValue,setCategoryValue] = useState('all');
 const [goods,setGoods] = useState([]);
 const [categories,setCategories] = useState([]);
+const basket=useSelector((state)=>state.xbasket); 
+useEffect( () => {
+  setBasketActive(basket.reduce((accum, item) => accum + item, 0))
+},[basket])
+
 useEffect( () => {
     axios.get('https://fakestoreapi.com/products')
     .then((result)=>{
@@ -20,6 +28,7 @@ useEffect( () => {
 useEffect( () => {
   axios.get('https://fakestoreapi.com/products')
   .then((result)=>{
+    console.log(result.data);
     setGoods(result.data)
   })
 }, []);
@@ -36,7 +45,7 @@ return (
           {categories.map((item,idx)=> <option  key={idx} style={{ fontSize:'2.5vw'}} >{item}</option>)}
         </select>        
       </div>
-      <Link to='basketcards' className="header-side__item" id='basket-link' style={{marginLeft:'2vw', marginRight:'3vw', padding:'0',fontSize:'1.5vw',border:'none', backgroundColor:'#ffffff',outlineColor:'#ffffff',backgroundSize:'100% 100%',alignSelf:'center', height:'5vw', width:'5vw', backgroundImage:"url('/4p22-final-project-levanyan-arthur/basketempty.png')"}}/>
+            <Link to='basketcards' className={(basketActive)?'header-side__item basket-icon_full':'header-side__item basket-icon_empty'} id='basket-link'></Link>
     </div>
   
     <div className="tbl">

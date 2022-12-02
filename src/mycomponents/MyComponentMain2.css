@@ -53,16 +53,16 @@ background: #FFFFFF;}
 .main-form__label-registration_right  {
   color: #EE2424;}
 #email-attention{
-    visibility: hidden;
+    visibility: visible;
 }
 #textarea-attention{
-  visibility: hidden;
+  visibility: visible;
 }
 #password-attention{
-  visibility: hidden;
+  visibility: visible;
 }
 #repeat-attention{
-  visibility: hidden;
+  visibility: visible;
 }
 .main-form__label_radio  {
   font-size: 14px;
