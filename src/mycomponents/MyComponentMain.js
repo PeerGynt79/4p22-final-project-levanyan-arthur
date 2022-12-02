@@ -37,7 +37,6 @@ axios.get('https://fakestoreapi.com/products')
                 } else {
                 dispatch(loadXBasket(loadedBasket))
                 };
-                localStorage.setItem("prices", JSON.stringify(result.data.map(item=>item.price)));
             })
 
 return (
@@ -59,16 +58,16 @@ return (
         :
         <Route path={'/'} element={<LayoutBasic/>}>
             <Route index element={<MyComponentEntry/>}/>
-            <Route path={'entry'} element={<MyComponentEntry/>}/>
-            <Route path={'secret'} element={<MyComponentEntry/>}/>
-            <Route path={'feedback'} element={<MyComponentEntry/>}/>
-            <Route path={'feedbackdone'} element={<MyComponentEntry/>}/>
-            <Route path={'buydone'} element={<MyComponentEntry/>}/>
-            <Route path={'error'} element={<MyComponentNothing/>}/>
+            <Route path={'entry'} element={<Navigate to='/'/>}/>
+            <Route path={'secret'} element={<Navigate to='/'/>}/>
+            <Route path={'feedback'} element={<Navigate to='/'/>}/>
+            <Route path={'feedbackdone'} element={<Navigate to='/'/>}/>
+            <Route path={'buydone'} element={<Navigate to='/'/>}/>
+            <Route path={'error'} element={<Navigate to='/'/>}/>
             <Route path={'largecard'}>
-                <Route path={':idCard'} element={<MyComponentEntry/>}/>
+                <Route path={':idCard'} element={<Navigate to='/'/>}/>
             </Route>
-            <Route path={'basketcards'} element={<MyComponentEntry/>}/>
+            <Route path={'basketcards'} element={<Navigate to='/'/>}/>
         </Route>
         }
         <Route path={'*'} element={<Navigate to={'error'}/>}/>

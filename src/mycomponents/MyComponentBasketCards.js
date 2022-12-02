@@ -12,9 +12,8 @@ export default function MyComponentBasketCards () {
     const dispatch=useDispatch();
     const basket=useSelector((state)=>state.xbasket); 
     const [products] = useSelector((state) => [state.products.entities]);
-    const prices=JSON.parse(localStorage.getItem("prices"))
     const countBasket = basket.reduce((accum, item) => accum + item, 0)
-    const countPrice = Math.round(basket.reduce((accum, item,idx) => accum + item*prices[idx], 0)*100)/100
+    const countPrice = Math.round(basket.reduce((accum, item,idx) => accum + item*products[idx].price, 0)*100)/100
   
     
     const buyClick = () =>{
