@@ -6,6 +6,7 @@ import MyComponentFeedback from './MyComponentFeedback';
 import MyComponentBuyActivated from './MyComponentBuyActivated';
 import MyComponentFeedbackActivated from './MyComponentFeedbackActivated';
 import MyComponentSecretActivated from './MyComponentSecretActivated';
+import MyComponentNothing from './MyComponentNothing';
 import LayoutBasic from './LayoutBasic';
 import './MyComponentMain.css';
 import './MyComponentHeader.css';
@@ -15,13 +16,20 @@ import axios from 'axios';
 import {useDispatch, useSelector} from 'react-redux'
 import {initXBasket,loadXBasket} from "../store/xbasket/xbasketSlice"
 import { Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { getProducts } from '../store/products/productsSlice';
+
 
 function MyComponentMain (){
 
 const authState=useSelector((state)=>state.auth);
-console.log('authState',authState)
+
 const dispatch=useDispatch();
 const loadedBasket=JSON.parse(localStorage.getItem("basket"))
+useEffect(() => {        
+  dispatch(getProducts());    
+}, []);
+
 axios.get('https://fakestoreapi.com/products')
         .then((result)=>{
             if ((loadedBasket===null)||(loadedBasket===undefined)){
@@ -41,8 +49,8 @@ return (
             <Route path={'entry'} element={<MyComponentEntry/>}/>
             <Route path={'secret'} element={<MyComponentSecretActivated/>}/>
             <Route path={'feedback'} element={<MyComponentFeedback/>}/>
-            <Route path={'buydone'} element={<MyComponentBuyActivated/>}/>
             <Route path={'feedbackdone'} element={<MyComponentFeedbackActivated/>}/>
+            <Route path={'buydone'} element={<MyComponentBuyActivated/>}/>
             <Route path={'largecard'}>
                 <Route path={':idCard'} element={<MyComponentLargeCard/>}/>
             </Route>
@@ -51,9 +59,19 @@ return (
         :
         <Route path={'/'} element={<LayoutBasic/>}>
             <Route index element={<MyComponentEntry/>}/>
+            <Route path={'entry'} element={<MyComponentEntry/>}/>
+            <Route path={'secret'} element={<MyComponentEntry/>}/>
+            <Route path={'feedback'} element={<MyComponentEntry/>}/>
+            <Route path={'feedbackdone'} element={<MyComponentEntry/>}/>
+            <Route path={'buydone'} element={<MyComponentEntry/>}/>
+            <Route path={'error'} element={<MyComponentNothing/>}/>
+            <Route path={'largecard'}>
+                <Route path={':idCard'} element={<MyComponentEntry/>}/>
+            </Route>
+            <Route path={'basketcards'} element={<MyComponentEntry/>}/>
         </Route>
         }
-        <Route path={'*'} element={<Navigate to={'/'}/>}/>
+        <Route path={'*'} element={<Navigate to={'error'}/>}/>
         </Routes>
     </div>
     )

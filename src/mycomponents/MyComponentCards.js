@@ -1,6 +1,5 @@
 import './MyComponentMain.css';
 import MyComponentCard from './MyComponentCard';
-import axios from 'axios';
 import { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import {useSelector} from 'react-redux'
@@ -10,28 +9,21 @@ export default function MyComponentCards () {
 const [basketActive,setBasketActive] = useState(false)
 const [searchValue,setSearchValue] = useState('');
 const [categoryValue,setCategoryValue] = useState('all');
-const [goods,setGoods] = useState([]);
 const [categories,setCategories] = useState([]);
-const basket=useSelector((state)=>state.xbasket); 
+const basket=useSelector((state)=>state.xbasket);
+const [products] = useSelector((state) => [state.products.entities]);
+
+
 useEffect( () => {
   setBasketActive(basket.reduce((accum, item) => accum + item, 0))
 },[basket])
 
 useEffect( () => {
-    axios.get('https://fakestoreapi.com/products')
-    .then((result)=>{
-            const newCategories = Array.from(new Set(result.data.map((item)=>item.category)))
+            const newCategories = Array.from(new Set(products.map((item)=>item.category)))
             newCategories.unshift('all')
             setCategories(newCategories)
-    })
 },[])
-useEffect( () => {
-  axios.get('https://fakestoreapi.com/products')
-  .then((result)=>{
-    console.log(result.data);
-    setGoods(result.data)
-  })
-}, []);
+
 return (
   <>
     <div className="header" style={{backgroundColor:'white',zIndex:'10',position:"sticky", top:'0px'}}>
@@ -50,7 +42,7 @@ return (
   
     <div className="tbl">
       <h1 style={{margin:'2vw 0vw 2vw 0vw',fontSize:'2.5vw'}}> Каталог товаров</h1>
-        {goods
+        {products
             .filter((item)=>new RegExp(searchValue, "i").test(item.title))
             .filter((item)=>(item.category===categoryValue)||(categoryValue==='all'))
             .map((item)=>
@@ -63,6 +55,7 @@ return (
                                     price={item.price}/>
           })
         }
+
     </div>
   </>
 )

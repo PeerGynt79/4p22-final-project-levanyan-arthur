@@ -1,7 +1,5 @@
 import './MyComponentMain.css';
 import MyComponentBasketCard from './MyComponentBasketCard';
-import axios from 'axios';
-import { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteFromXBasket } from '../store/xbasket/xbasketSlice';
@@ -10,23 +8,17 @@ import { deleteFromXBasket } from '../store/xbasket/xbasketSlice';
 
 export default function MyComponentBasketCards () {
 
-    const [goods,setGoods] = useState([]);
+    
     const dispatch=useDispatch();
     const basket=useSelector((state)=>state.xbasket); 
+    const [products] = useSelector((state) => [state.products.entities]);
     const prices=JSON.parse(localStorage.getItem("prices"))
     const countBasket = basket.reduce((accum, item) => accum + item, 0)
     const countPrice = Math.round(basket.reduce((accum, item,idx) => accum + item*prices[idx], 0)*100)/100
-
-    useEffect( () => {
-        
-        axios.get('https://fakestoreapi.com/products')
-            .then((result)=>{
-                setGoods(result.data.filter((item)=>!!basket[item.id-1]))
-            })
-    },[basket])    
+  
     
     const buyClick = () =>{
-        goods.forEach(element => {
+        products.filter((item)=>!!basket[item.id-1]).forEach(element => {
             console.log(`Наименование: ${element.title}; количество: ${basket[element.id-1]}; сумма:${Math.round(basket[element.id-1]*element.price*100)/100}`);
         });
 
@@ -39,7 +31,7 @@ export default function MyComponentBasketCards () {
 
         <div className="tbl">
         <h1 style={{margin:'2vw 0vw 2vw 0vw',fontSize:'2.5vw'}}> Корзина</h1>
-        {goods.map((item)=>
+        {products.filter((item)=>!!basket[item.id-1]).map((item)=>
             {    
 
             return <MyComponentBasketCard key={Number(item.id)}
