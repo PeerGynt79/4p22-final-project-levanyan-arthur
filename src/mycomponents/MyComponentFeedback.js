@@ -74,8 +74,10 @@ useEffect(()=>{
                     <label className="main-form__label_radio" htmlFor="radio2"> Жен.</label>
                 </div>
             </div>
+            <div className="main-form__label-div">
             <p className="main-form__caption main-form__caption_small" htmlFor="selfabout">Текст обращения</p>
             <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="textarea" id="textarea-attention">{textAlert}</label>
+            </div>
             <textarea className="main-form__textarea" value={textValue} id="selfabout" name="selfabout" type="password" placeholder="Опишите кратко проблему. Текст обращения должен содержать не менее 50 символов..."  onChange={clickTextValue}></textarea>
             <div className="main-form__checkbox">
                 <input id="checkbox" name="subscribe" type="checkbox" value="true"/>
