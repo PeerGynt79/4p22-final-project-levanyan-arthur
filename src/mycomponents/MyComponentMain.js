@@ -28,6 +28,7 @@ useEffect(() => {
   dispatch(getProducts());    
 }, []);
 
+
 axios.get('https://fakestoreapi.com/products')
         .then((result)=>{
             if ((loadedBasket===null)||(loadedBasket===undefined)){
