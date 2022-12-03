@@ -33,7 +33,7 @@ return (
             <div className="header__side">
                 <span className="header-side__item">Категория</span>
                 <select className="header-side__item header-side__item_input"  name='category-selector' value={categoryValue} onChange={(e)=>setCategoryValue(e.target.value)}>
-                    {categories.map((item,idx)=> <option  className='common__text_big' key={idx}>{item}</option>)}
+                    {categories.map((item,idx)=> <option  className='header-side__item header-side__item_input common__text' key={idx}>{item}</option>)}
                 </select>        
             </div>
             <Link to='basketcards' className={(basketActive)?'header-side__item basket-icon_full':'header-side__item basket-icon_empty'} id='basket-link'></Link>
