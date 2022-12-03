@@ -1,4 +1,4 @@
-import './MyComponentMain.css';
+import './styles.css';
 import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux'
 import {addToXBasket, deleteFromXBasket} from "../store/xbasket/xbasketSlice"

@@ -1,5 +1,4 @@
-import './MyComponentMain2.css';
-import './MyComponentMain.css';
+import './styles.css';
 import {accessGranted, accessDenied} from "../store/access/accessSlice"
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';

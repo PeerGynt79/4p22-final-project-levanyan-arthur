@@ -1,3 +1,4 @@
+import './styles.css';
 import MyComponentBasketCards from './MyComponentBasketCards';
 import MyComponentCards from './MyComponentCards';
 import MyComponentLargeCard from './MyComponentLargeCard';
@@ -5,11 +6,8 @@ import MyComponentEntry from './MyComponentEntry';
 import MyComponentFeedback from './MyComponentFeedback';
 import MyComponentBuyActivated from './MyComponentBuyActivated';
 import MyComponentFeedbackActivated from './MyComponentFeedbackActivated';
-import MyComponentSecretActivated from './MyComponentSecretActivated';
 import MyComponentNothing from './MyComponentNothing';
 import LayoutBasic from './LayoutBasic';
-import './MyComponentMain.css';
-import './MyComponentHeader.css';
 import { Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import axios from 'axios';
@@ -46,10 +44,10 @@ return (
         <Route path={'/'} element={<LayoutBasic/>}>
             <Route index element={<MyComponentCards/>}/>
             <Route path={'entry'} element={<MyComponentEntry/>}/>
-            <Route path={'secret'} element={<MyComponentSecretActivated/>}/>
             <Route path={'feedback'} element={<MyComponentFeedback/>}/>
             <Route path={'feedbackdone'} element={<MyComponentFeedbackActivated/>}/>
             <Route path={'buydone'} element={<MyComponentBuyActivated/>}/>
+            <Route path={'error'} element={<MyComponentNothing/>}/>
             <Route path={'largecard'}>
                 <Route path={':idCard'} element={<MyComponentLargeCard/>}/>
             </Route>
@@ -63,14 +61,14 @@ return (
             <Route path={'feedback'} element={<Navigate to='/'/>}/>
             <Route path={'feedbackdone'} element={<Navigate to='/'/>}/>
             <Route path={'buydone'} element={<Navigate to='/'/>}/>
-            <Route path={'error'} element={<Navigate to='/'/>}/>
+            <Route path={'error'} element={<MyComponentNothing/>}/>
             <Route path={'largecard'}>
                 <Route path={':idCard'} element={<Navigate to='/'/>}/>
             </Route>
             <Route path={'basketcards'} element={<Navigate to='/'/>}/>
         </Route>
         }
-        <Route path={'*'} element={<Navigate to={'error'}/>}/>
+        <Route path={'*'} element={<Navigate to={'/'}/>}/>
         </Routes>
     </div>
     )

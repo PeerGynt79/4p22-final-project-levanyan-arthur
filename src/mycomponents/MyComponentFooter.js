@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { accessDenied } from '../store/access/accessSlice';
 import { authDenied } from '../store/access/authSlice';
-import './MyComponentMain.css';
+import './styles.css';
 
 
 

@@ -1,5 +1,4 @@
-import './MyComponentMain2.css';
-import './MyComponentMain.css';
+import './styles.css';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -21,7 +20,6 @@ export default function MyComponentFeedback (){
  }
  
  const clickMailValue = (e)=>{
-
     setMailValue(e.target.value)    }
 const clickTextValue = (e)=>{
         setTextValue(e.target.value)    }
@@ -33,18 +31,17 @@ useEffect(()=>{
             } else if (!(mask.test(String(mailValue).toLowerCase()))){
             setMailAlert('Email введён некорректно');
             } else setMailAlert('');
- 
         if (String(nameValue) === ''){
             setNameAlert('Поле обязательно для заполнения')
-        }else if (String(nameValue).length<2){
+            }else if (String(nameValue).length<2){
             setNameAlert('Слишком короткое имя')
-        } else setNameAlert('');
+            } else setNameAlert('');
 
         if (String(textValue) === ''){
             setTextAlert('Поле обязательно для заполнения')
-        } else if (String(textValue).length<50) {
+            } else if (String(textValue).length<50) {
             setTextAlert('Сообщение слишком короткое')
-        } else setTextAlert('');
+            } else setTextAlert('');
 
  }, [mailValue,textValue,nameValue])
 
@@ -55,12 +52,12 @@ useEffect(()=>{
             <p className="main-form__caption main-form__caption_big">Обратная связь</p>
             <div className="main-form__label-div">
                 <label className="main-form__label main-form__label_registration main-form__label-registration_left " htmlFor="email">* Email</label>
-                <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="email" id="email-attention">{mailAlert} </label>
+                <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="email">{mailAlert} </label>
             </div>
             <input className="main-form__input" value={mailValue} id="email" name="email" type="email" placeholder="Введите email" onChange={clickMailValue}/>
             <div className="main-form__label-div">
                 <label className="main-form__label main-form__label_registration main-form__label-registration_left " htmlFor="email">* Имя</label>
-                <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="email" id="email-attention"> {nameAlert} </label>
+                <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="email"> {nameAlert} </label>
             </div>
             <input className="main-form__input"  value={nameValue} id="name" name="name" placeholder="Введите имя"  onChange={(e)=>setNameValue(e.target.value)}/>
             <p className="main-form__caption main-form__caption_small">Пол</p>
@@ -76,7 +73,7 @@ useEffect(()=>{
             </div>
             <div className="main-form__label-div">
             <p className="main-form__caption main-form__caption_small" htmlFor="selfabout">Текст обращения</p>
-            <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="textarea" id="textarea-attention">{textAlert}</label>
+            <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="textarea">{textAlert}</label>
             </div>
             <textarea className="main-form__textarea" value={textValue} id="selfabout" name="selfabout" type="password" placeholder="Опишите кратко проблему. Текст обращения должен содержать не менее 50 символов..."  onChange={clickTextValue}></textarea>
             <div className="main-form__checkbox">

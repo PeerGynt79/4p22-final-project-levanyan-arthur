@@ -1,5 +1,4 @@
-//import { Link } from 'react-router-dom';
-import './MyComponentHeader.css';
+import './styles.css';
 
 
 function MyComponentHeader() {

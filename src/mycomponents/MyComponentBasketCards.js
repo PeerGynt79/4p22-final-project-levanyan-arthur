@@ -1,4 +1,4 @@
-import './MyComponentMain.css';
+import './styles.css';
 import MyComponentBasketCard from './MyComponentBasketCard';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';

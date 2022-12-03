@@ -1,4 +1,4 @@
-import './MyComponentMain.css';
+import './styles.css';
 import MyComponentCard from './MyComponentCard';
 import { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';

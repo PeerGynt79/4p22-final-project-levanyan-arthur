@@ -1,4 +1,4 @@
-import './MyComponentMain2.css';
+import './styles.css';
 
 export default function MyComponentFeedbackActivated (){
     return (
