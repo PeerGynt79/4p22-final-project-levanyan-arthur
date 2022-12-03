@@ -33,21 +33,21 @@ export default function MyComponentBasketCard (props) {
         dispatch(deleteFromXBasket(props.id-1))
     }    
     return (
-        <div className="Card-main">
-            <img className="Card-pic" alt = {props.title} src={props.image}/>  
-            <div className="divcenter">
-                <span className='Card-title__title'>{props.title}</span>
-                <div style={{width:'100%',paddingLeft:'2%',paddingRight:'2%', display:'flex',flexDirection:'row'}}>
-                    <button className="btn Card-title__price_left"  style={{width:'9%',marginLeft:'0.5%',marginRight:'0.5%'}} onClick={tenMinus}> -10 </button>
-                    <button  className="btn Card-title__price_right"  style={{width:'6%',marginLeft:'0.5%',marginRight:'0.5%'}} onClick={oneMinus}> -1 </button>
-                    <button  className="btn"  style={{width:'29%',marginLeft:'0.5%',marginRight:'0.5%'}}> В корзине : {basket[props.id-1]} </button>
-                    <button className="btn Card-title__price_left" style={{width:'9%',marginLeft:'0.5%',marginRight:'0.5%'}} onClick={tenPlus}> +10 </button>
-                    <button  className="btn Card-title__price_right"  style={{width:'6%',marginLeft:'0.5%',marginRight:'0.5%'}} onClick={onePlus}> +1 </button>
-                    <button  className="btn"   style={{width:'36%',marginLeft:'0.5%',marginRight:'0.5%'}} onClick={allMinus}> Удалить позицию</button>
+        <div className="card-main">
+            <img className="card-pic" alt = {props.title} src={props.image}/>  
+            <div className="card__info">
+                <span className='card-title__title'>{props.title}</span>
+                <div className="basket__buttons-row">
+                    <button className="common__button common__button_basket common__button_9" onClick={tenMinus}> -10 </button>
+                    <button  className="common__button common__button_basket common__button_6" onClick={oneMinus}> -1 </button>
+                    <button  className="common__button common__button_basket common__button_29" > В корзине : {basket[props.id-1]} </button>
+                    <button className="common__button common__button_basket common__button_9" onClick={tenPlus}> +10 </button>
+                    <button  className="common__button common__button_basket common__button_6" onClick={onePlus}> +1 </button>
+                    <button  className="common__button common__button_basket common__button_36" onClick={allMinus}> Удалить позицию</button>
                 </div>
             </div>
-            <span className='Card-title__price Card-title__price_left'>{props.price}р.</span>
-            <span className='Card-title__price Card-title__price_right'>Цена</span>
+            <span className='card-title__price card-title__basket-text'>{props.price}р.</span>
+            <span className='card-title__price card-title__basket-text'>Цена</span>
         </div> 
     )
 };

@@ -28,8 +28,8 @@ export default function MyComponentBasketCards () {
     if (countBasket) {
         return (
 
-        <div className="tbl">
-        <h1 style={{margin:'2vw 0vw 2vw 0vw',fontSize:'2.5vw'}}> Корзина</h1>
+        <div className="main__cards-area">
+        <h1 className='common__text_big'> Корзина</h1>
         {products.filter((item)=>!!basket[item.id-1]).map((item)=>
             {    
 
@@ -41,17 +41,17 @@ export default function MyComponentBasketCards () {
                                 price={item.price}/>
             })
         }
-        <div style={{width:'100%',paddingLeft:'5%',paddingRight:'5%', display:'flex',flexDirection:'row', alignSelf:'stretch'}}>
-        <h4 style={{width:'14%', fontSize:'2.5vw',textAlign:'center'}}>Итого:</h4>
-        <h4 style={{width:'8%', fontSize:'2.5vw',textAlign:'center'}}>{countBasket}</h4>
-        <h4 style={{width:'30%', fontSize:'2.5vw',textAlign:'center'}}>товаров на сумму</h4>
-        <h4 style={{width:'19%', fontSize:'2.5vw',textAlign:'center'}}>{countPrice} р.</h4>
-        {
+        <div className='basket__buttons-row'>
+        <span className='common__text_big common__text_margin'>Итого:</span>
+        <span className='common__text_big common__text_margin'>{countBasket}</span>
+        <span className='common__text_big common__text_margin'>товаров на сумму</span>
+        <span className='common__text_big common__text_margin'>{countPrice} р.</span>
+        </div>
+    {
 
         }
-        <Link  className="btn"style={{width:'30%',fontSize:'2vw',}}  onClick={buyClick} to='/buydone'> Выполнить покупку </Link>
-        </div>
-
+        <Link  className="common__button common__button_basket common__text"  onClick={buyClick} to='/buydone'> Выполнить покупку </Link>
+    
         </div>
 
         )} else {
@@ -59,8 +59,8 @@ export default function MyComponentBasketCards () {
 
         return (
             <main className="main"  >
-                <h1 style={{fontSize:'2.5vw'}}>Корзина пуста.</h1>
-                <h3 style={{fontSize:'1.5vw'}}>Посмотрите предложения на главной странице.</h3>
+                <h1 className='common__text_big'>Корзина пуста.</h1>
+                <h3 className='common__text'>Посмотрите предложения на главной странице.</h3>
             </main>)
     }
 };

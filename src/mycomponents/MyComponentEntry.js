@@ -42,7 +42,7 @@ export default function MyComponentEntry (){
             <input className="main-form__input" id="email" name="email" type="email" placeholder="Введите login" onChange={loginInput}/>
             <label className="main-form__label main-form__label_entrance" >Пароль</label>
             <input className="main-form__input" id="password" name="password" type="password" placeholder="Введите password" onChange={loginPassword} htmlFor="password"/>
-            <Link className="main-form__button main-form__button_registration" onClick={accessControl} to="/">Войти</Link>      
+            <Link className="main-form__button main-form__button_registration common__button" onClick={accessControl} to="/">Войти</Link>      
         </form>
     </main>
     )

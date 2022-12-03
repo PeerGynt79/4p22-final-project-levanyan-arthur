@@ -69,7 +69,7 @@ return (
             <Route path={'basketcards'} element={<Navigate to='/'/>}/>
         </Route>
         }
-        <Route path={'*'} element={<Navigate to={'/'}/>}/>
+        <Route path={'*'} element={<Navigate to={'error'}/>}/>
         </Routes>
     </div>
     )

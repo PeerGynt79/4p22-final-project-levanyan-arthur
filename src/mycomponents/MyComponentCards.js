@@ -26,22 +26,22 @@ useEffect( () => {
 
 return (
   <>
-    <div className="header" style={{backgroundColor:'white',zIndex:'10',position:"sticky", top:'0px'}}>
+    <div className="header header_search">
       <div className="header__side">
-        <span className="header-side__item" style={{justifySelf: 'left',fontSize:'2.5vw', marginLeft:'2vw', marginRight:'3vw'}} >Поиск</span>
-        <input className="header-side__item" value={searchValue} onChange={(e)=>setSearchValue(e.target.value)} style={{outline :'none',fontSize:'2.5vw',alignSelf:'center', width:'25vw'}}></input>
+        <span className="header-side__item">Поиск</span>
+        <input className="header-side__item header-side__item_input common__text" id="searchval" value={searchValue} onChange={(e)=>setSearchValue(e.target.value)}></input>
       </div>
-      <div className="header__side"  style={{ fontSize:'2.5vw'}}>
-        <span className="header-side__item" style={{justifySelf: 'left',  fontSize:'2.5vw', marginLeft:'2vw', marginRight:'3vw'}} >Категория</span>
-        <select name='category-selector' value={categoryValue} onChange={(e)=>setCategoryValue(e.target.value)} style={{ outline :'none', fontSize:'2.5vw',alignSelf:'center', width:'25vw'}}>
-          {categories.map((item,idx)=> <option  key={idx} style={{ fontSize:'2.5vw'}} >{item}</option>)}
+      <div className="header__side">
+        <span className="header-side__item">Категория</span>
+        <select className="header-side__item header-side__item_input"  name='category-selector' value={categoryValue} onChange={(e)=>setCategoryValue(e.target.value)}>
+          {categories.map((item,idx)=> <option  className='common__text_big' key={idx}>{item}</option>)}
         </select>        
       </div>
             <Link to='basketcards' className={(basketActive)?'header-side__item basket-icon_full':'header-side__item basket-icon_empty'} id='basket-link'></Link>
     </div>
   
-    <div className="tbl">
-      <h1 style={{margin:'2vw 0vw 2vw 0vw',fontSize:'2.5vw'}}> Каталог товаров</h1>
+    <div className="main__cards-area">
+      <h1  className='common__text_big'> Каталог товаров</h1>
         {products
             .filter((item)=>new RegExp(searchValue, "i").test(item.title))
             .filter((item)=>(item.category===categoryValue)||(categoryValue==='all'))

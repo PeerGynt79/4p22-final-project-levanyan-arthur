@@ -15,8 +15,8 @@ function MyComponentFooter() {
         }
     
     return (
-        <footer className="hdr" style={{height:'10vw' }} >
-            <div style={{fontSize:'2vw', textAlign: 'center',display:'flex',flexDirection:'row',justifyContent: 'space-evenly'}}>
+        <footer className="footer" >
+            <div className="footer__block">
                 <Link to = {'entry'} onClick={denyAccess} >{authState?'Выход':'Вход'}</Link>
                 <Link to = {'/'}>Каталог</Link>
                 <Link to = {'feedback'}>Обратная связь</Link>

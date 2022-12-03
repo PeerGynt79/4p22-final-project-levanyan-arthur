@@ -28,13 +28,17 @@ export default function MyComponentLargeCard () {
 
     return (
     <>
-    <h1 style={{fontSize:'3vw'}}>{`${products[idCard-1].title}`}</h1>
-    <div style={{display:'flex',flexDirection:'column',paddingLeft:'3vw',paddingRight:'3vw'}}>
-        <img style={{width:'30vw', paddingLeft:'3vw',paddingRight:'3vw', alignSelf:'center'}} alt = {`product ${products[idCard-1].id}`} src={`${products[idCard-1].image}`}/>  
-        <div style={{width:'100%',display:'flex',flexDirection:'column'}}>
-        <button className="btn btn_large-card"  onClick={myclick}  style= {(basket[idCard-1])?{borderColor:'lime',backgroundColor:'maroon'}:{borderColor:'bisque',backgroundColor:'darkgreen'}}>{(basket[idCard-1])?'Убрать из списка':'Добавить в список'}</button>   
-            <div style={{width:'100%', display:'flex',flexDirection:'row'}}><h3 style={{width:'30%',fontSize:'2vw', textAlign:'left'}}>Категория:</h3><h4 style={{width:'70%',fontSize:'2vw', textAlign:'left'}}>{`${products[idCard-1].category}`}</h4></div>
-            <div style={{width:'100%', display:'flex',flexDirection:'row'}}><h3 style={{width:'30%',fontSize:'2vw', textAlign:'left'}}>Описание:</h3><h4 style={{width:'70%',fontSize:'2vw', textAlign:'left'}}>{`${products[idCard-1].description}`}</h4></div>
+    <h1  className='common__text_big'>{`${products[idCard-1].title}`}</h1>
+    <div className='large-card__main-block'>
+        <img className='large-card__main-block-image' alt = {`product ${products[idCard-1].id}`} src={`${products[idCard-1].image}`}/>  
+        <div className='large-card__main-block_internal-block'>
+        <button className="common__button common__button_basket common__text"  onClick={myclick}  style= {(basket[idCard-1])?{borderColor:'lime',backgroundColor:'maroon'}:{borderColor:'bisque',backgroundColor:'darkgreen'}}>{(basket[idCard-1])?'Убрать из списка':'Добавить в список'}</button>   
+            <div className='large-card__internal-block_info-block'>
+                <h3 className='large-card__info-block large-card__info-block_caption'>Категория:</h3>
+                <h4 className='large-card__info-block large-card__info-block_content'>{`${products[idCard-1].category}`}</h4></div>
+            <div className='large-card__internal-block_info-block'>
+                <h3 className='large-card__info-block large-card__info-block_caption'>Описание:</h3>
+                <h4 className='large-card__info-block large-card__info-block_content'>{`${products[idCard-1].description}`}</h4></div>
 
         </div>
     </div>
