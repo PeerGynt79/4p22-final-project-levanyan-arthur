@@ -19,16 +19,12 @@ import { getProducts } from '../store/products/productsSlice';
 
 
 function MyComponentMain (){
-
 const authState=useSelector((state)=>state.auth);
-
 const dispatch=useDispatch();
 const loadedBasket=JSON.parse(localStorage.getItem("basket"))
 useEffect(() => {        
   dispatch(getProducts());    
 }, []);
-
-
 axios.get('https://fakestoreapi.com/products')
         .then((result)=>{
             if ((loadedBasket===null)||(loadedBasket===undefined)){
@@ -37,41 +33,41 @@ axios.get('https://fakestoreapi.com/products')
                 dispatch(loadXBasket(loadedBasket))
                 };
             })
-
 return (
     <div  className='body-container'>
         <Routes>
-        {authState?
-        <Route path={'/'} element={<LayoutBasic/>}>
-            <Route index element={<MyComponentCards/>}/>
-            <Route path={'entry'} element={<MyComponentEntry/>}/>
-            <Route path={'feedback'} element={<MyComponentFeedback/>}/>
-            <Route path={'feedbackdone'} element={<MyComponentFeedbackActivated/>}/>
-            <Route path={'buydone'} element={<MyComponentBuyActivated/>}/>
-            <Route path={'error'} element={<MyComponentNothing/>}/>
-            <Route path={'largecard'}>
-                <Route path={':idCard'} element={<MyComponentLargeCard/>}/>
+            {authState?
+            <Route path={'/'} element={<LayoutBasic/>}>
+                <Route index element={<MyComponentCards/>}/>
+                <Route path={'entry'} element={<MyComponentEntry/>}/>
+                <Route path={'feedback'} element={<MyComponentFeedback/>}/>
+                <Route path={'feedbackdone'} element={<MyComponentFeedbackActivated/>}/>
+                <Route path={'buydone'} element={<MyComponentBuyActivated/>}/>
+                <Route path={'error'} element={<MyComponentNothing/>}/>
+                <Route path={'largecard'}>
+                    <Route path={':idCard'} element={<MyComponentLargeCard/>}/>
+                </Route>
+                <Route path={'basketcards'} element={<MyComponentBasketCards/>}/>
             </Route>
-            <Route path={'basketcards'} element={<MyComponentBasketCards/>}/>
-        </Route>
-        :
-        <Route path={'/'} element={<LayoutBasic/>}>
-            <Route index element={<MyComponentEntry/>}/>
-            <Route path={'entry'} element={<Navigate to='/'/>}/>
-            <Route path={'secret'} element={<Navigate to='/'/>}/>
-            <Route path={'feedback'} element={<Navigate to='/'/>}/>
-            <Route path={'feedbackdone'} element={<Navigate to='/'/>}/>
-            <Route path={'buydone'} element={<Navigate to='/'/>}/>
-            <Route path={'error'} element={<MyComponentNothing/>}/>
-            <Route path={'largecard'}>
-                <Route path={':idCard'} element={<Navigate to='/'/>}/>
+            :
+            <Route path={'/'} element={<LayoutBasic/>}>
+                <Route index element={<MyComponentEntry/>}/>
+                <Route path={'entry'} element={<Navigate to='/'/>}/>
+                <Route path={'secret'} element={<Navigate to='/'/>}/>
+                <Route path={'feedback'} element={<Navigate to='/'/>}/>
+                <Route path={'feedbackdone'} element={<Navigate to='/'/>}/>
+                <Route path={'buydone'} element={<Navigate to='/'/>}/>
+                <Route path={'error'} element={<MyComponentNothing/>}/>
+                <Route path={'largecard'}>
+                    <Route path={':idCard'} element={<Navigate to='/'/>}/>
+                </Route>
+                <Route path={'basketcards'} element={<Navigate to='/'/>}/>
             </Route>
-            <Route path={'basketcards'} element={<Navigate to='/'/>}/>
-        </Route>
-        }
-        <Route path={'*'} element={<Navigate to={'error'}/>}/>
+            }
+            <Route path={'*'} element={<Navigate to={'error'}/>}/>
         </Routes>
     </div>
     )
 }
+
 export default MyComponentMain;

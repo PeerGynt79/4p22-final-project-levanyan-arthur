@@ -24,7 +24,7 @@ export default function MyComponentCard (props) {
         } 
     }
 
-        return (
+    return (
         <Link className="card-main" to={`/largecard/${props.id}`}>
             <img className="card-pic" alt = {props.title} src={props.image}/>  
                 <div className="card__info">

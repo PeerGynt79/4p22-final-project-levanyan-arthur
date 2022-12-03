@@ -73,17 +73,17 @@ useEffect(()=>{
                 </div>
             </div>
             <div className="main-form__label-div">
-            <p className="main-form__caption main-form__caption_small" htmlFor="selfabout">Текст обращения</p>
-            <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="textarea">{textAlert}</label>
+                <p className="main-form__caption main-form__caption_small" htmlFor="selfabout">Текст обращения</p>
+                <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="textarea">{textAlert}</label>
             </div>
             <textarea className="main-form__textarea" value={textValue} id="selfabout" name="selfabout" type="password" placeholder="Опишите кратко проблему. Текст обращения должен содержать не менее 50 символов..."  onChange={(e)=>setTextValue(e.target.value)}></textarea>
             <div className="main-form__label-div">
-            <p className="main-form__caption main-form__caption_small" htmlFor="file">Скриншот ошибки</p>
-            <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="textarea">{fileAlert}</label>
+                <p className="main-form__caption main-form__caption_small" htmlFor="file">Скриншот ошибки</p>
+                <label className="main-form__label main-form__label_registration  main-form__label-registration_right" htmlFor="textarea">{fileAlert}</label>
             </div>
             <div className="main-form__file">
-            <input className="main-form__fileload" value={fileValue} id="file" name="file" type="file" accept=".jpg,.bmp,.png"  onChange={(e)=>setFileValue(e.target.value)}></input>
-            <label className="main-form__fileload main-form__fileload_label common__text_small" htmlFor="file">{fileValue?fileValue:'Загрузите файл...'}</label>
+                <input className="main-form__fileload" value={fileValue} id="file" name="file" type="file" accept=".jpg,.bmp,.png"  onChange={(e)=>setFileValue(e.target.value)}></input>
+                <label className="main-form__fileload main-form__fileload_label common__text_small" htmlFor="file">{fileValue?fileValue:'Загрузите файл...'}</label>
             </div>
             <div className="main-form__checkbox">
                 <input id="checkbox" name="subscribe" type="checkbox" value="true"/>
