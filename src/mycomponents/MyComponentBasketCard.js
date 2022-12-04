@@ -46,8 +46,8 @@ export default function MyComponentBasketCard (props) {
                     <button  className="common__button common__button_basket common__button_36" onClick={allMinus}> Удалить позицию</button>
                 </div>
             </div>
-            <span className='card-title__price card-title__basket-text'>{props.price}р.</span>
-            <span className='card-title__price card-title__basket-text'>Цена</span>
+            <span className='card-title__price card-title__basket-text card-title__price_left'>{props.price}р.</span>
+            <span className='card-title__price card-title__basket-text card-title__price_right'>Цена</span>
         </div> 
     )
 };
