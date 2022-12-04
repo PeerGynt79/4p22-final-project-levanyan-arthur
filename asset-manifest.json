@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/4p22-final-project-levanyan-arthur/static/css/main.4814acb8.css",
-    "main.js": "/4p22-final-project-levanyan-arthur/static/js/main.e855d642.js",
+    "main.css": "/4p22-final-project-levanyan-arthur/static/css/main.5ceb1f83.css",
+    "main.js": "/4p22-final-project-levanyan-arthur/static/js/main.027a11e0.js",
     "static/media/basketfull.png": "/4p22-final-project-levanyan-arthur/static/media/basketfull.02259f106e241379ddcf.png",
     "static/media/basketempty.png": "/4p22-final-project-levanyan-arthur/static/media/basketempty.61e853423eb627f4081f.png",
     "index.html": "/4p22-final-project-levanyan-arthur/index.html",
-    "main.4814acb8.css.map": "/4p22-final-project-levanyan-arthur/static/css/main.4814acb8.css.map",
-    "main.e855d642.js.map": "/4p22-final-project-levanyan-arthur/static/js/main.e855d642.js.map"
+    "main.5ceb1f83.css.map": "/4p22-final-project-levanyan-arthur/static/css/main.5ceb1f83.css.map",
+    "main.027a11e0.js.map": "/4p22-final-project-levanyan-arthur/static/js/main.027a11e0.js.map"
   },
   "entrypoints": [
-    "static/css/main.4814acb8.css",
-    "static/js/main.e855d642.js"
+    "static/css/main.5ceb1f83.css",
+    "static/js/main.027a11e0.js"
   ]
 }
