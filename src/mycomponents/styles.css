@@ -222,13 +222,13 @@ a:hover {
   line-height: 2vw;
 }
 .card-title__price_left {
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 1vw 0px 0px 1vw;
 }
 .card-title__price_left .card-title__price_right::after {
   content: '$';
 }
 .card-title__price_right {
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 1vw 1vw 0px;
 }
 
 .card__info{
